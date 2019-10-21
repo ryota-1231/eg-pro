@@ -1,0 +1,36 @@
+.top-wapper{
+  height: 100vh;
+  width: 100vw;
+  background-image: url(/assets/computer-2982270_1280.jpg);
+  background-size: cover;
+  opacity: 0.6;
+  position: fixed;
+  overflow: auto;
+  padding-top: 15px;
+  .top-title{
+    text-align: center;
+    margin: 300px auto;
+    padding: 40px;
+    h1{
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+    p{
+      font-size: 20px;
+    }
+  }
+  .top-contents{
+    height: 100vh;
+    z-index: 10;
+  }
+  .d1{
+    background-color: red;
+  }
+  .d2{
+    background-color: blue;
+    opacity: 0.3;
+  }
+  .d3{
+    background-color: green;
+  }
+}
