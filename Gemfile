@@ -60,3 +60,6 @@ gem 'pry-rails'
 gem 'rspec-rails'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'rails_12factor', group: :production
+gem 'fog-aws'
+
