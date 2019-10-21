@@ -1,0 +1,6 @@
+= form_with model: @image, local: true do |form|
+  = form.label :name
+  = form.text_field :name 
+  = form.label :image 
+  = form.file_field :image
+  = form.submit
