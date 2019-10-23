@@ -6,9 +6,14 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all'
-    -# %script{src:"https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"}
-    = javascript_pack_tag 'application'
+ 
+  
+    
   %body
     = yield 
+    %script{src:"https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"}
+    %script{src:"https://cdn.jsdelivr.net/npm/jquery-scrollify@1/jquery.scrollify.min.js"}
+    = javascript_pack_tag 'application'
+   
    
 

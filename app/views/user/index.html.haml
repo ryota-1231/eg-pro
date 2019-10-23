@@ -1,1 +1,45 @@
-%div hello world
+.top-wapper
+  .top-contents.box.d1
+    .top-title
+      %h1 Eg-Pro
+      .top-discription
+      %p これからエンジニアを目指そうとしている人が、一緒に楽しく学べるカリキュラム
+  .top-contents.box.d2
+    .d2__title
+      %p こんな悩みをお持ちな方いらっしゃいませんか？
+    .d2__contents
+      .d2__discription1
+        %p 今まだプログラミングやったことがないけど興味はある
+        %p Webって？ブラウザって？
+        %p 何からやっていいかわからない・・・
+      .d2__discription2
+        %p エンジニア初心者の僕がこれからプログラミングを始める人たちがまず知っておくべき知識をカリキュラム方式でお伝えします！
+      .d2__discription3
+        %p 手を動かしながら！　楽しく！　続けらる！
+        %p パソコンとインターネット環境があればすぐ始められます！
+  .top-contents.box.d3
+  .top-contents.box.d4
+    .d4__title
+      %p さっそく登録する
+    .user-sign-up__box
+      .user-sign-up__box__title
+        %p 新規登録
+      .user-sign-up__box__contents
+        .user-sign-up__box__google
+          = link_to '' do
+            .google__button
+              Googleアカウントで登録する
+        .user-sign-up__box__twitter
+          = link_to '' do
+            .twitter__button
+              Twitterアカウントで登録する
+        .user-sign-up__box__mail
+          = link_to new_user_registration_path do
+            .mail__button
+              メールアドレスで登録する
+        .user-sign-up__box__sign-in
+          = link_to new_user_session_path do
+            .sign-in__button
+              ログイン
+
+              

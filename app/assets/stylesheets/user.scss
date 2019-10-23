@@ -1,3 +1,90 @@
-// Place all the styles related to the user controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.top-wapper{
+  height: 100vh;
+  width: 100vw;
+  background-image: url(/assets/computer-2982270_1280.jpg);
+  background-size: cover;
+  opacity: 0.6;
+  position: fixed;
+  overflow: auto;
+  .top-contents{
+    height: 100vh;
+    z-index: 10;
+  }
+  .d1{
+    .top-title{
+      text-align: center;
+      margin: 0 auto;
+      padding: 40px;
+      h1{
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
+      p{
+        font-size: 20px;
+      }
+    }
+  }
+  .d2{
+    background-color: red;
+    &__title {
+      color: #fff;
+      text-align: center;
+      padding:50px;
+    }
+  }
+  .d3{
+    background-color: blue;
+    opacity: 0.3;
+  }
+  .d4{
+    background-color: green;
+    &__title{
+      color: #fff;
+      text-align: center;
+    }
+    .user-sign-up__box{
+      background-color: #fff;
+      box-shadow: 0px 0px 10px 0.5px rgb(144, 228, 149);
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+      &__title{
+        padding: 20px;
+      }
+      &__contents{
+        color: #fff !important;
+        width: 250px;
+        margin: 0 auto;
+        padding-bottom: 40px;
+        .user-sign-up__box__google {
+          margin-top:20px;
+          .google__button{
+            background-color: rgb(16, 106, 223);
+            padding: 10px;
+          }
+        }
+        .user-sign-up__box__twitter {
+          margin-top:20px;
+          .twitter__button{
+            background-color: rgb(16, 106, 223);
+            padding: 10px;
+          }
+        }
+        .user-sign-up__box__mail {
+          margin-top:20px;
+          .mail__button{
+            background-color: rgb(16, 106, 223);
+            padding: 10px;
+          }
+        }
+        .user-sign-up__box__sign-in {
+          margin-top:20px;
+          .sign-in__button{
+            background-color: rgb(223, 99, 16);
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+}

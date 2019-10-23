@@ -1,4 +1,5 @@
-$(function(){
+// $(function(){
+//   $.scrollify({section:".box"});
+// })
 
-  $('.d1').offset().top;
-})
+
