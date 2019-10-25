@@ -13,8 +13,7 @@
 ActiveRecord::Schema.define(version: 2019_10_23_073815) do
 
   create_table "curriculums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
-    t.text "HTML_CSS"
-    t.text "Ruby"
+    t.text "curriculums"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

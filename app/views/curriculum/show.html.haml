@@ -1,0 +1,41 @@
+.curriculum-new-wrapper
+  .description
+    %p 手順
+  .editor-contents
+    .swiper-container
+      .swiper-wrapper
+        .swiper-slide
+          = image_tag 'computer-2982270_1280.jpg'
+        .swiper-slide
+        .swiper-slide
+      .swiper-pagination
+    .swiper-button-prev
+    .swiper-button-next
+    .btn-group
+      .btn-group
+        %button.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown"}
+          %i.glyphicon.glyphicon-search
+          %span.caret
+        %ul#font-size.dropdown-menu
+          %li
+            %a{"data-size" => "10", :href => "#"} 小さい
+          %li
+            %a{"data-size" => "12", :href => "#"} 普通
+          %li
+            %a{"data-size" => "14", :href => "#"} 大きい
+      %button#bold.btn.btn-default
+        %i.glyphicon.glyphicon-bold
+      %button#save.btn.btn-default
+        %i.glyphicon.glyphicon-floppy-save
+      %button#load.btn.btn-default
+        %i.glyphicon.glyphicon-folder-open
+    #editor
+    .result__contents
+      %iframe.result__field#iframe
+
+
+%script{src:"https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"}
+%script{src:"https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"}
+%script{src:"https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ext-language_tools.js"}
+
+= javascript_pack_tag 'curriculum'
