@@ -1,0 +1,26 @@
+.curriculum-new-wrapper{
+  background-color: rgb(127, 208, 255);
+  .description{
+
+  }
+  .editor-contents{
+    display: grid;
+    grid-template-rows: 34px 500px;
+    grid-template-columns: 300px 40px 300px;
+    width: 640px;
+    margin: 50px auto;  
+    .btn-group{
+      grid-row: 1 / 2;
+      grid-column: 1 / 2;
+    }
+    #editor{
+      grid-row: 2/ 3;
+      grid-column: 1 / 2;
+    }
+    .result__contents{
+      background-color: #fff;
+      grid-row: 2/ 3;
+      grid-column: 3 / 4;
+    }
+  }
+}

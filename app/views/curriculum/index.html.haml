@@ -3,11 +3,11 @@
     %p カリキュラム
   .curriculum-contents
     .curriculum-contents__box1
-      = link_to '' do
-        %p HTML/CSS
+      = link_to curriculum_path(@HTML.id) do
+        %p=@HTML.curriculums
     .curriculum-contents__box2
-      = link_to '' do
-        %p Ruby
+      = link_to curriculum_path(@Ruby.id) do
+        %p=@Ruby.curriculums
   .log-out
     .log-out__button
       = link_to destroy_user_session_path, method: :delete do

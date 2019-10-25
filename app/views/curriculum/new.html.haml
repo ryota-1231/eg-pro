@@ -1,0 +1,36 @@
+-# .curriculum-show-wrapper
+-#   .curriculum-title
+-#     %p カリキュラム
+-#   .curriculum-contents
+-#     .curriculum-editer
+-#       %ul.editer-index
+-#         %li index
+-#       .editer-box
+-#         .editer-box__side
+-#         .editer-box__main
+-#           .editer-box__main__contents
+-#             .editer-box__main__content
+
+
+.curriculum--wrapper
+  .description
+    %p 手順
+  .editor-contents
+    .swiper-container
+      .swiper-wrapper
+        .swiper-slide
+          = image_tag 'computer-2982270_1280.jpg'
+        .swiper-slide
+          = image_tag 'images-381937_640のコピー2.jpg'
+        .swiper-slide
+          %h1 hello-----!!!
+      .swiper-pagination
+    .swiper-button-prev
+    .swiper-button-next
+
+
+%script{src:"https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"}
+%script{src:"https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"}
+%script{src:"https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ext-language_tools.js"}
+
+= javascript_pack_tag 'swiper'
