@@ -30,6 +30,24 @@ $(function(){
       if (!confirm("読み込みますか？")) return;
       editor.setValue(localStorage.text, -1);
     });
+
+
+    $('.js-modal-open').on('click',function(){
+      console.log('hoge')
+      $('.js-modal').fadeIn();
+      return false;
+  });
+  $('.js-modal-close').on('click',function(){
+    console.log('gogo')
+      $('.js-modal').fadeOut();
+      return false;
+  });
+
+  $(window).on('load', function() {
+    $('.js-modal').fadeIn();
+    return false;
+});
+
 })
 
 
