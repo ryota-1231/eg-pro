@@ -1,5 +1,4 @@
 $(function(){
-
   var view=$('#iframe');
   var editor = ace.edit("editor");
     editor.$blockScrolling = Infinity;
@@ -14,7 +13,7 @@ $(function(){
 
     editor.getSession().on('change', function () {
       view.contents().find('body').html(editor.getSession().getValue());
-  });
+    });
 
     $('#font-size').click(function(e) {
       editor.setFontSize($(e.target).data('size'));
@@ -31,22 +30,20 @@ $(function(){
       editor.setValue(localStorage.text, -1);
     });
 
-
     $('.js-modal-open').on('click',function(){
-      console.log('hoge')
-      $('.js-modal').fadeIn();
+      $('.js-modal1').fadeIn();
       return false;
-  });
-  $('.js-modal-close').on('click',function(){
-    console.log('gogo')
-      $('.js-modal').fadeOut();
-      return false;
-  });
+    });
+    $('.js-modal-close').on('click',function(){
+        $('.js-modal1').fadeOut();
+        return false;
+    });
 
-  $(window).on('load', function() {
-    $('.js-modal').fadeIn();
+   $(window).on('load', function() {
+    $('#modal').fadeIn();
+    $('.js-mo').fadeOut();
     return false;
-});
+   });
 
 })
 

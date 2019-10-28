@@ -12,4 +12,11 @@ class CurriculumController < ApplicationController
   def new
   end
 
+  def frame
+    render layout: false
+  end
+
+  def iframe
+    render layout: false
+  end
 end

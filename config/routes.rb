@@ -4,7 +4,12 @@ Rails.application.routes.draw do
 
   root 'user#index'
   resources :user 
-  resources :curriculum
   resources :image
+  resources :curriculum do
+    collection do
+      get 'iframe'
+      get 'frame'
+    end
+  end
 
 end
