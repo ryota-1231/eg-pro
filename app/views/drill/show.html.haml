@@ -1,0 +1,75 @@
+.curriculum-show-wrapper
+  .curriculum-header
+    .header-group
+      .description
+        %p HTML
+  .editor-contents
+    .btn-group
+      %button#bold.btn.btn-default
+        %i.glyphicon.glyphicon-bold
+      %button#save.btn.btn-default
+        %i.glyphicon.glyphicon-floppy-save
+      %button#load.btn.btn-default
+        %i.glyphicon.glyphicon-folder-open
+    #discription
+    #editor
+    .result__contents
+      .iframe-area-top
+        %p Preview
+        %iframe{src: "frame", id: "iframe", class: "result__field"}
+      .iframe-area-bottom
+        %p Sample
+        %iframe{src: "iframe", class: "result__sample", id: "result_iframe"}
+  .curriculum-footer
+    .footer-group
+      .content
+        .js-modal-open
+          スライドを表示
+      .discription
+      .result-btn
+        %div 完了
+  .modal.js-modal2.js-mo
+    .modal__bg
+      .modal__content2
+        正解！！！！
+        .js-modal-close.close-icon
+          %i.fa.fa-times-circle
+  .modal.js-modal3.js-mo
+    .modal__bg
+      .modal__content2
+        失敗！！
+        .js-modal-close.close-icon
+          %i.fa.fa-times-circle
+  .modal.js-modal1#modal
+    .modal__bg
+      .modal__content
+        .swiper-container
+          .swiper-wrapper
+            - @drill.each do |drill_slide|
+              .swiper-slide
+                .drill-content
+                  .drill-title-area
+                    .drill-title
+                      %h3=drill_slide.title
+                    .drill-discription
+                      %p=drill_slide.discription
+                  .drill-image-area
+                    - if drill_slide.images.present?
+                      - drill_slide.images.each do |img|
+                        =image_tag img.image.to_s, size: "200x200", alt: "image"
+            .swiper-slide
+              .btn-area
+                .js-modal-close.close-btn
+                  ドリルにトライする
+          .swiper-pagination
+        .swiper-button-prev
+        .swiper-button-next
+        .js-modal-close.close-icon
+          %i.fa.fa-times-circle
+%script{src:"https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"}
+%script{src:"https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"}
+%script{src:"https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ext-language_tools.js"}
+
+= javascript_pack_tag 'swiper'
+= javascript_pack_tag 'curriculum'
+= javascript_pack_tag 'result'

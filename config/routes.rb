@@ -3,13 +3,18 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root 'user#index'
-  resources :user 
+
+  resources :user
   resources :image
   resources :curriculum do
-    collection do
-      get 'iframe'
-      get 'frame'
+    resources :drill do
+      collection do
+        get 'iframe'
+        get 'frame'
+      end
     end
   end
+
+  resources :image
 
 end

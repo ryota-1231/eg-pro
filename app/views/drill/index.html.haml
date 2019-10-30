@@ -1,0 +1,25 @@
+.drill-index-wrapper
+  .header
+  .main-contents
+    .side-ber
+    .drill-contents
+      - @drills.each do |drill|
+        = link_to curriculum_drill_path(id: drill.id) do
+          .drill-content
+            .drill-title-area
+              .drill-title
+                %h3=drill.children.first.title
+              .drill-discription
+                %p=drill.children.first.discription
+            .drill-image-area
+              .drill-image
+                - if drill.children.first.images.present?
+                  =image_tag drill.children.first.images.first.image.to_s, size: "300x200", alt: "image"
+              - if drill.user_id == current_user.id
+                .drill-edit
+                  = link_to edit_curriculum_drill_path(id: drill.id) do
+                    .edit-button
+                      編集
+            .drill-auther
+              %p=drill.user.name + "さんの作品"
+            

@@ -1,22 +1,17 @@
-.curriculum--wrapper
-  .description
-    %p 手順
-  .editor-contents
-    .swiper-container
-      .swiper-wrapper
-        .swiper-slide
-          = image_tag 'computer-2982270_1280.jpg'
-        .swiper-slide
-          = image_tag 'images-381937_640のコピー2.jpg'
-        .swiper-slide
-          %h1 hello-----!!!
-      .swiper-pagination
-    .swiper-button-prev
-    .swiper-button-next
-
-
-%script{src:"https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"}
-%script{src:"https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"}
-%script{src:"https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ext-language_tools.js"}
-
-= javascript_pack_tag 'swiper'
+.curriculum-new--wrapper
+  .curriculum-contents
+    .description
+      %p 手順
+    .curriculum-index
+      %p カリキュラムを選択する
+      %ul
+        - @curriculum.each do |curriculum|
+          %li.curriculum-list
+            =curriculum.curriculums
+            - curriculum.children.each do |element|
+              %li.curriculum-list
+                =element.curriculums
+                - element.children.each do |ele|
+                  %li.curriculum-list
+                    = link_to curriculum_drill_index_path(ele.id) do
+                      =ele.curriculums

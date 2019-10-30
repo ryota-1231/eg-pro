@@ -1,8 +1,7 @@
 class CurriculumController < ApplicationController
 
   def index
-    @HTML = Curriculum.find(1)
-    @Ruby = Curriculum.find(2)
+    @curriculums = Curriculum.where(ancestry: nil)
   end
 
   def show
@@ -10,13 +9,6 @@ class CurriculumController < ApplicationController
   end
 
   def new
-  end
-
-  def frame
-    render layout: false
-  end
-
-  def iframe
-    render layout: false
+    @curriculum = Curriculum.where(ancestry: nil)
   end
 end

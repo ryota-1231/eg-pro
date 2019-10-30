@@ -2,12 +2,15 @@
   .curriculum-title
     %p カリキュラム
   .curriculum-contents
-    .curriculum-contents__box1
-      = link_to curriculum_path(@HTML.id) do
-        %p=@HTML.curriculums
-    .curriculum-contents__box2
-      = link_to curriculum_path(@Ruby.id) do
-        %p=@Ruby.curriculums
+    - @curriculums.each do |curriculum|
+      .curriculum-contents__box.box
+        = link_to curriculum_path(curriculum.id) do
+          %p=curriculum.curriculums
+
+    .curriculum-contents__box3.box
+      = link_to new_curriculum_path do
+        %p カリキュラムをつくる
+        
   .log-out
     .log-out__button
       = link_to destroy_user_session_path, method: :delete do
