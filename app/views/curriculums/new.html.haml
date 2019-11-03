@@ -1,0 +1,17 @@
+.curriculum-new--wrapper
+  .curriculum-contents
+    .description
+      %p 手順
+    .curriculum-index
+      %p カリキュラムを選択する
+      %ul
+        - @curriculum.each do |curriculum|
+          %li.curriculum-list
+            =curriculum.curriculums
+            - curriculum.children.each do |element|
+              %li.curriculum-list
+                =element.curriculums
+                - element.children.each do |ele|
+                  %li.curriculum-list
+                    = link_to curriculum_drills_path(ele.id) do
+                      =ele.curriculums

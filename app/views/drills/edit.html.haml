@@ -1,0 +1,31 @@
+#edit-form
+  = form_with(model: @drill_chidren, method: :patch, url: curriculum_drill_path, local: true) do |form|
+    .swiper-container
+      .swiper-wrapper
+        - @drill_children.each do |drill|
+          = form.fields_for "drills[]", drill do |f|
+            .swiper-slide
+              .drill-content
+                = f.hidden_field :curriculum_id, value: drill.curriculum_id
+                = f.hidden_field :user_id, value: current_user.id
+                = f.hidden_field :ancestry, value: drill.ancestry
+                .drill-title-area
+                  .drill-title
+                    = f.text_field :title, selected: drill.title
+                  .drill-discription
+                    = f.text_field :discription
+                .drill-image-area
+                  .input-area
+                    = f.file_field :image_1, type: "file", value:"", id:"img-file1"
+                    = f.file_field :image_2, type: "file", value:"", id:"img-file2"
+                    = f.file_field :image_3, type: "file", value:"", id:"img-file3"
+                    %label{for:"img-file1"}
+                    %label{for:"img-file2"}
+                    %label{for:"img-file3"}
+                      %p ドラッグアンドドロップ またはクリックしてファイルをアップロード
+      .swiper-pagination
+    .swiper-button-prev
+    .swiper-button-next
+    = form.submit
+%script{src:"https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"}
+= javascript_pack_tag 'swiper'

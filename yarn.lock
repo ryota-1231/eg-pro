@@ -1668,6 +1668,10 @@ coa@^2.0.2:
     chalk "^2.4.1"
     q "^1.1.2"
 
+"cocoon@github:nathanvda/cocoon#c24ba53":
+  version "1.2.10"
+  resolved "https://codeload.github.com/nathanvda/cocoon/tar.gz/c24ba53b40e688e7d8b7212824139ec7f352a242"
+
 code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
@@ -4285,6 +4289,10 @@ neo-async@^2.5.0, neo-async@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
+
+"nested_form@github:ryanb/nested_form":
+  version "0.0.0"
+  resolved "https://codeload.github.com/ryanb/nested_form/tar.gz/1b0689dfb4d230ceabd278eba159fcb02f23c68a"
 
 nice-try@^1.0.4:
   version "1.0.5"

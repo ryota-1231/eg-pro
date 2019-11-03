@@ -1,0 +1,17 @@
+.curriculum-wrapper
+  .curriculum-title
+    %p カリキュラム
+  .curriculum-contents
+    - @curriculums.each do |curriculum|
+      .curriculum-contents__box.box
+        = link_to curriculum_path(curriculum.id) do
+          %p=curriculum.curriculums
+
+    .curriculum-contents__box3.box
+      = link_to new_curriculum_path do
+        %p カリキュラムをつくる
+        
+  .log-out
+    .log-out__button
+      = link_to destroy_user_session_path, method: :delete do
+        ログアウト

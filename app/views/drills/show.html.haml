@@ -45,12 +45,17 @@
       .modal__content
         .swiper-container
           .swiper-wrapper
-            .swiper-slide
-              = image_tag 'computer-2982270_1280.jpg', size: "300×300"
-            .swiper-slide
-              = image_tag 'images-381937_640のコピー2.jpg'
-            .swiper-slide
-              %h1 hello-----!!!
+            - @drill.each do |drill_slide|
+              .swiper-slide
+                .drill-content
+                  .drill-title-area
+                    .drill-title
+                      %h3=drill_slide.title
+                    .drill-discription
+                      %p=drill_slide.discription
+                  .drill-image-area
+                    - if !drill_slide.image_1.nil?
+                      = image_tag "#{drill_slide.image_1}", size: "200x200", alt: "image"
             .swiper-slide
               .btn-area
                 .js-modal-close.close-btn
@@ -60,9 +65,6 @@
         .swiper-button-next
         .js-modal-close.close-icon
           %i.fa.fa-times-circle
-
-  
-
 %script{src:"https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"}
 %script{src:"https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js"}
 %script{src:"https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ext-language_tools.js"}
