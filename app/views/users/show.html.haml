@@ -1,0 +1,43 @@
+#my-page
+  .my-page__header
+  .my-page__wrapper
+    .user-information
+      .user-image-area
+        .user-image
+        .user-avatar-area
+          - if @user.avatar.attached?
+            = image_tag @user.thumbnail,{class: 'user-avatar'}
+      = current_user.name
+      .user-setting
+        = link_to 'ユーザー情報を変更する', edit_user_registration_path 
+      
+
+    .user-contents
+      %p メダル
+      %p 学習継続日数
+      %p 最長学習継続日数
+      %p 学習進捗率
+      %p 作成したカリキュラム
+
+
+
+
+
+
+
+
+
+
+
+
+  -# 達成カリキュラム
+  -# カリキュラムの進捗率
+  -# メダル獲得数
+  -# 作成したカリキュラム
+  -# カリキュラム利用者数
+  -# アンケート
+  -# ランキング
+  
+  -# 設定
+  -#   アバター写真
+  -#   edit

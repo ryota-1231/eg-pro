@@ -4,11 +4,15 @@
   .field
     = f.label :name
     %br/
-    = f.text_field :name, autocomplete: "name"
+    = f.text_field :name, autocomplete: "name", placeholder: 'ニックネーム入力(必須)'
+  .field
+    = f.label :avatar, 'アバターの設定(任意)'
+    %br/
+    = f.file_field :avatar, autocomplete: "avatar", placeholder: 'アバターの設定(任意)'
   .field
     = f.label :email
     %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
+    = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス入力(必須)'
   .field
     = f.label :password
     - if @minimum_password_length

@@ -1,4 +1,9 @@
 .curriculum-wrapper
+  .curriculum-header
+    = link_to 'マイページ', user_path(current_user.id)
+    .log-out
+      .log-out__button
+        = link_to 'ログアウト', destroy_user_session_path, method: :delete
   .curriculum-title
     %p カリキュラム
   .curriculum-contents
@@ -11,7 +16,3 @@
       = link_to new_curriculum_path do
         %p カリキュラムをつくる
         
-  .log-out
-    .log-out__button
-      = link_to destroy_user_session_path, method: :delete do
-        ログアウト
