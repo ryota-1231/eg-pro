@@ -1,0 +1,45 @@
+#my-page{
+  background-color: rgb(203, 244, 250);
+  .my-page__header{
+    height: 50px;
+    background-color: rgb(0, 153, 255);
+  }
+  .my-page__wrapper{
+    display: flex;
+    padding: 40px;
+    .user-information{
+      background-color: #fff;
+      width: 300px;
+      margin-right: 40px;
+      .user-image-area{
+        height: 200px;
+        width: 100%;
+        position: relative;
+        .user-image {
+          height: 100%;
+          width: 100%;
+          background-image: url(/assets/computer-2982270_1280.jpg);
+          background-size: cover;
+          opacity: 0.6;
+          box-shadow: #888 0px 1px 10px 1px;
+        }
+        .user-avatar-area{
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translate(-50%,0%);
+          .user-avatar{
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px 0.1px #888;
+          }
+        }
+      }
+    }
+    .user-contents{
+
+    }
+
+  }
+}
