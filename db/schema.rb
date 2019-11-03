@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_30_031309) do
+ActiveRecord::Schema.define(version: 2019_11_03_051023) do
 
   create_table "curriculums", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.text "curriculums"
@@ -27,16 +27,11 @@ ActiveRecord::Schema.define(version: 2019_10_30_031309) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "ancestry"
+    t.text "image_1"
+    t.text "image_2"
+    t.text "image_3"
     t.index ["curriculum_id"], name: "index_drills_on_curriculum_id"
     t.index ["user_id"], name: "index_drills_on_user_id"
-  end
-
-  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.text "image"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.bigint "drill_id"
-    t.index ["drill_id"], name: "index_images_on_drill_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
@@ -59,5 +54,4 @@ ActiveRecord::Schema.define(version: 2019_10_30_031309) do
 
   add_foreign_key "drills", "curriculums"
   add_foreign_key "drills", "users"
-  add_foreign_key "images", "drills"
 end

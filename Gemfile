@@ -64,3 +64,5 @@ gem 'fog-aws'
 gem "aws-sdk-s3"
 gem "devise"
 gem 'ancestry'
+gem 'cocoon'
+gem "nested_form"

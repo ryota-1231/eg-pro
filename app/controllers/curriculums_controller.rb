@@ -1,4 +1,4 @@
-class CurriculumController < ApplicationController
+class CurriculumsController < ApplicationController
 
   def index
     @curriculums = Curriculum.where(ancestry: nil)

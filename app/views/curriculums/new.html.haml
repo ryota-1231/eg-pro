@@ -13,5 +13,5 @@
                 =element.curriculums
                 - element.children.each do |ele|
                   %li.curriculum-list
-                    = link_to curriculum_drill_index_path(ele.id) do
+                    = link_to curriculum_drills_path(ele.id) do
                       =ele.curriculums

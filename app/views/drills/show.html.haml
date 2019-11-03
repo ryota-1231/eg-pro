@@ -54,9 +54,8 @@
                     .drill-discription
                       %p=drill_slide.discription
                   .drill-image-area
-                    - if drill_slide.images.present?
-                      - drill_slide.images.each do |img|
-                        =image_tag img.image.to_s, size: "200x200", alt: "image"
+                    - if !drill_slide.image_1.nil?
+                      = image_tag "#{drill_slide.image_1}", size: "200x200", alt: "image"
             .swiper-slide
               .btn-area
                 .js-modal-close.close-btn

@@ -13,8 +13,8 @@
                 %p=drill.children.first.discription
             .drill-image-area
               .drill-image
-                - if drill.children.first.images.present?
-                  =image_tag drill.children.first.images.first.image.to_s, size: "300x200", alt: "image"
+                - if drill.children.first.image_1.present?
+                  =image_tag drill.children.first.image_1.to_s, size: "300x200", alt: "image"
               - if drill.user_id == current_user.id
                 .drill-edit
                   = link_to edit_curriculum_drill_path(id: drill.id) do
@@ -22,4 +22,9 @@
                       編集
             .drill-auther
               %p=drill.user.name + "さんの作品"
+      - if @new_drill == "new_drill"
+        .drill-content
+          = link_to new_curriculum_drill_path do
+            .drill-new-make
+              新しくカリキュラムを作る
             
