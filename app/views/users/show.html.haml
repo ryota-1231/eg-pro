@@ -13,22 +13,57 @@
       
 
     .user-contents
-      %p メダル
-      %p 学習継続日数
-      %p 最長学習継続日数
-      %p 学習進捗率
-      %p 作成したカリキュラム
-
-
-
-
-
-
-
-
-
-
-
+      .user-name
+        %p=current_user.name+"のステータス"
+      .user-content
+        .user-medal.box
+          .user-medal__title.title
+            %p メダル
+          .user-medal__content.main
+            .main__left
+              %p 最近撮ったメダル
+              = image_tag "medal-2163457_1280.png", size:"180x180"
+            .main__right
+              .main__right_1
+                %p 1回目達成メダル
+                = image_tag "medal-2163457_1280.png", size:"50x50"
+              .main__right_2
+                %p 10回目達成メダル
+                = image_tag "medal-2163457_1280.png", size:"50x50"
+              .main__right_3
+                %p カリキュラム作成メダル
+                = image_tag "medal-2163457_1280.png", size:"50x50"
+        .user-learning-duration.box
+          .user-learning-duration__title.title
+            %p 学習状況
+          .user-learning-duration__content.main
+            .main__left
+              %p 学習合計日数
+              %p
+                %span> 30
+                日
+            .main__right
+              .main__right_1
+                %p 学習継続日数
+                %p
+                  %span> 10
+                  日
+              .main__right_2
+                %p 最長学習継続日数
+                %p
+                  %span> 15
+                  日
+        .user-learning-progress-rate.box
+          .user-learning-progress-rate__title.title
+            %p 学習進捗率
+          .user-learning-progress-rate__content.main
+        .user-created-curriculum.box
+          .user-created-curriculum__title.title
+            %p 作成したカリキュラム
+          .user-created-curriculum__content.main
+            - if @user.drills.present?
+              - @drills.each do |drill|
+                = link_to drill.curriculum.curriculums, curriculum_drills_path(drill.curriculum_id),{class: 'drill_link'}
 
   -# 達成カリキュラム
   -# カリキュラムの進捗率
