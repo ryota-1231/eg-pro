@@ -18,7 +18,7 @@
         .user-image {
           height: 100%;
           width: 100%;
-          background-image: url(/assets/computer-2982270_1280.jpg);
+          background-image: url(/assets/mesh-1430108_1280.png);
           background-size: cover;
           opacity: 0.6;
           box-shadow: #888 0px 1px 10px 1px;
@@ -38,7 +38,70 @@
       }
     }
     .user-contents{
+      width: calc(100vw - 420px);
+      .user-name{
+        background-color: #fff;
+        padding:10px 20px;
+        margin-bottom: 20px;
+        p{
+          margin: 0;
+        }
+      }
+      .user-content{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .box{
+          height: 300px;
+          width: 48%;
+          min-width: 300px;
+          margin-bottom: 20px;
+          box-shadow: 0 0 10px 1px #888;
+          background-color: #fff;
+          .title{
+            text-align: center;
+          }
+          .main{
+            height: 270px;
+            display: flex;
+            padding: 15px;
+            text-align: center;
+            &__left{
+              margin-right: 20px;
+              span{
+                font-size: 60px;
+                font-weight: bold;
+              }
+            }
+            &__right{
+              span{
+                font-size: 40px;
+                font-weight: bold;
+              }
+            }
+          }
+        }
+        .user-medal{
 
+        }
+        .user-created-curriculum{
+          .main{
+            display: block;
+          }
+          &__content{
+            .drill_link{
+              display: block;
+              box-shadow: 0 0 10px 0.1px #888;
+              height: 50px;
+              width: 100%;
+              padding: 10px;
+              line-height: 30px;
+              margin-bottom: 10px;
+            }
+          }
+        }
+
+      }
     }
 
   }
