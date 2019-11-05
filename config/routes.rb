@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :images
+  resources :progresses
 
   resources :curriculums do
     resources :drills do

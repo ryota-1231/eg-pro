@@ -1,4 +1,11 @@
+
+
 $(function(){
+
+  function frameClick() {
+    document.location.href = "https://www.google.com/";
+  }
+
   $('.result-btn').click(function(){
     var dom_sample = document.getElementById('iframe')
     var body_sample = dom_sample.contentWindow.document.querySelector('body')
@@ -23,4 +30,5 @@ $(function(){
     $('.js-modal3').fadeOut();
     return false;
   });
+
 })

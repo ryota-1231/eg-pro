@@ -26,12 +26,22 @@
         .js-modal-open
           スライドを表示
       .discription
-      .result-btn
-        %div 完了
+      #result-btn
+        %div.result-btn 完了
   .modal.js-modal2.js-mo
     .modal__bg
       .modal__content2
-        正解！！！！
+        = form_with(model: @progress, method: :post, id: 'form_id', url: progresses_path) do |form|
+          正解！！！！
+          = form.radio_button :evaluation, 2, checked: true
+          = form.label :evaluation, "よく理解できた！", {value: 2, style: "display: inline-block;"}
+          = form.radio_button :evaluation, 1
+          = form.label :evaluation, "理解できた", {value: 1, style: "display: inline-block;"}
+          = form.radio_button :evaluation, 0
+          = form.label :evaluation, "少しモヤモヤ...", {value: 0, style: "display: inline-block;"}
+          = form.hidden_field :curriculum_id, value: params[:curriculum_id]
+          = form.hidden_field :drill_id, value: params[:id]
+          = form.submit '完了', {class:'complete-btn'}
         .js-modal-close.close-icon
           %i.fa.fa-times-circle
   .modal.js-modal3.js-mo
@@ -72,3 +82,4 @@
 = javascript_pack_tag 'swiper'
 = javascript_pack_tag 'curriculum'
 = javascript_pack_tag 'result'
+-# = javascript_pack_tag 'success'

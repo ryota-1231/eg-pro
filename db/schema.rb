@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_03_150406) do
+ActiveRecord::Schema.define(version: 2019_11_04_124020) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "name", null: false
@@ -55,6 +55,18 @@ ActiveRecord::Schema.define(version: 2019_11_03_150406) do
     t.index ["user_id"], name: "index_drills_on_user_id"
   end
 
+  create_table "progresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "drill_id"
+    t.bigint "curriculum_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "evaluation", default: 0, null: false
+    t.index ["curriculum_id"], name: "index_progresses_on_curriculum_id"
+    t.index ["drill_id"], name: "index_progresses_on_drill_id"
+    t.index ["user_id"], name: "index_progresses_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -76,4 +88,7 @@ ActiveRecord::Schema.define(version: 2019_11_03_150406) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "drills", "curriculums"
   add_foreign_key "drills", "users"
+  add_foreign_key "progresses", "curriculums"
+  add_foreign_key "progresses", "drills"
+  add_foreign_key "progresses", "users"
 end

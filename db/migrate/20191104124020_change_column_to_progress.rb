@@ -1,0 +1,9 @@
+class ChangeColumnToProgress < ActiveRecord::Migration[6.0]
+  def up
+    change_column :progresses, :evaluation, :integer, null: false, default: 0
+  end
+
+  def down
+    change_column :progresses, :evaluation, :integer
+  end
+end
