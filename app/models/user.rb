@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :drills
   has_many :curriculums, through: :drills
+  has_many :progresses
   has_one_attached :avatar
 
   def thumbnail
