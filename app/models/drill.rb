@@ -7,4 +7,17 @@ class Drill < ApplicationRecord
   has_many :progresses
   has_ancestry
 
+  validates :user_id, :curriculum_id, presence: true
+  validates :title, length:  { maximum: 30 }
+  validates :discription, length: { maximum: 250 }
+
+  def drill_present
+    unless self.title.blank? || self.discription.blank?
+      return true
+    else
+      return false
+    end
+
+  end
+
 end

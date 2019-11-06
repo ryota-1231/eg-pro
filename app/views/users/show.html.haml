@@ -55,6 +55,10 @@
         .user-learning-progress-rate.box
           .user-learning-progress-rate__title.title
             %p 学習進捗率
+            - if !@user.progresses.present?
+              まだ終了したカリキュラムはありません
+            - else
+              =@user.progresses_count
           .user-learning-progress-rate__content.main
         .user-created-curriculum.box
           .user-created-curriculum__title.title

@@ -1,5 +1,5 @@
 class CurriculumsController < ApplicationController
-
+  before_action :authenticate_user!, only:[:show, :new]
   def index
     @curriculums = Curriculum.where(ancestry: nil)
   end

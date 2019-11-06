@@ -13,15 +13,15 @@ class Form::DrillCollection < Form::Base
     end
   end
 
-  def valid?
-    valid_drills = self.drills.map(&:valid?).all?
-    super && valid_drills
-  end
-
   def save
     return false unless valid?
-    Drill.transaction { self.drills.each(&:save!) }
+    Drill.transaction { target_drills.each(&:save!) }
     true
   end
+
+  def target_drills
+    self.drills.select { |v| v.valid? == true }
+  end
+
 end
 
