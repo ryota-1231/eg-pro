@@ -31,4 +31,12 @@ $(function(){
     return false;
   });
 
+  $('.complete-button').on('click',function(){
+    $('.js-modal2').fadeOut();
+    $('.js-modal3').fadeOut();
+    var html = `<a href="/curriculums" class="next-btn">次へ</a>`
+    $('#result-btn').html(html)
+    return false;
+  });
+
 })

@@ -1,4 +1,4 @@
-= form_with(model: @form, method: :post, url: curriculum_drills_path, local: true) do |form|
+= form_with(model: @form, method: :post, url: curriculum_drills_path, local: true, id: "new_form") do |form|
   .swiper-container
     .swiper-wrapper
       = form.fields_for :drills do |f|
@@ -9,20 +9,21 @@
             = f.hidden_field :ancestry, value: @ancestry_id
             .drill-title-area
               .drill-title
-                = f.text_field :title
+                = f.text_area :title, placeholder: "タイトルを入力してください\n (必須：30文字以内)"
               .drill-discription
-                = f.text_field :discription
-            .drill-image-area
-              .input-area
-                = f.file_field :image_1, type: "file", value:"", id:"img-file1"
-                = f.file_field :image_2, type: "file", value:"", id:"img-file2"
-                = f.file_field :image_3, type: "file", value:"", id:"img-file3"
-                %label{for:"img-file1"}
-                %label{for:"img-file2"}
-                %label{for:"img-file3"}
-                  %p ドラッグアンドドロップ またはクリックしてファイルをアップロード
+                = f.text_area :discription,  placeholder: "説明文を入力してください (必須：250文字以内)"
+            #image-box-1
+              #image-box__container
+                = f.label :image_1, class: "image_1_label", id: "image_1" do
+                  = f.file_field :image_1, value:"", class: "img_field"
+                  %p.image_1_p ドラッグアンドドロップ またはクリックしてファイルをアップロード
+
+                = f.label :image_2, class: "image_2_label", id: "image_2" do
+                  = f.file_field :image_2, value:"", class: "img_field"
+                  %p.image_2_p ドラッグアンドドロップ またはクリックしてファイルをアップロード
     .swiper-pagination
   .swiper-button-prev
   .swiper-button-next
-  = form.submit
+  #submit
+    = form.submit
 

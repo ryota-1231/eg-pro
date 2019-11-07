@@ -3,28 +3,39 @@
   .main-contents
     .side-ber
     .drill-contents
-      - @drills.each do |drill|
-        = link_to curriculum_drill_path(id: drill.id) do
-          .drill-content
-            .drill-title-area
-              .drill-title
-                %h3=drill.children.first.title
-              .drill-discription
-                %p=drill.children.first.discription
-            .drill-image-area
-              .drill-image
-                - if drill.children.first.image_1.present?
-                  =image_tag drill.children.first.image_1.to_s, size: "300x200", alt: "image"
-              - if drill.user_id == current_user.id
-                .drill-edit
-                  = link_to edit_curriculum_drill_path(id: drill.id) do
-                    .edit-button
-                      編集
-            .drill-auther
-              %p=drill.user.name + "さんの作品"
-      - if @new_drill == "new_drill"
+      - if @drills.first.present?
+        - if @drills.first.children.present?
+          - @drills.each do |drill|
+            = link_to curriculum_drill_path(id: drill.id) do
+              .drill-content
+                .drill-title-area
+                  .drill-title
+                    %h3=drill.children.first.title
+                #image-box-1
+                  - if drill.children.first.image_1.present? && drill.children.first.image_2.present?
+                    = image_tag "#{drill.children.first.image_1}", alt: "image", class: "image_1"
+                    = image_tag "#{drill.children.first.image_2}", alt: "image", class: "image_2"
+                  - elsif drill.children.first.image_1.present? && drill.image_2.blank? 
+                    = image_tag "#{drill.children.first.image_1}",  alt: "image", class: "image"
+                  - else
+                    .blank_area
+                - if drill.user_id == current_user.id
+                  .drill-edit
+                    = link_to edit_curriculum_drill_path(id: drill.id) do
+                      .edit-button
+                        編集
+                .drill-auther
+                  - if drill.user.avatar.attached?
+                    = image_tag drill.user.thumbnail_50,{class: 'user-avatar'}
+                  - else
+                    = image_tag '/assets/default_avatar.png',{class: 'user-avatar', size: '50x50', style: 'opacity: 0.7'}
+                  %p=drill.user.name + "さんの作品"
+              
+      - if (@new_drill == "new_drill") && (@drills.blank? || @drills.first.children.blank?)
         .drill-content
-          = link_to new_curriculum_drill_path do
+          = form_for @drill, url: curriculum_drills_path do |form|
             .drill-new-make
-              新しくカリキュラムを作る
+              = form.hidden_field :title, value: "#{current_user.name}"+ params[:curriculum_id]
+              = form.hidden_field :discription, value: "#{current_user.name}"+ params[:curriculum_id]
+              = form.submit '新しくカリキュラムを作る'
             
