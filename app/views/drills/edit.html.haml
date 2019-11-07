@@ -14,14 +14,12 @@
                     = f.text_field :title, selected: drill.title
                   .drill-discription
                     = f.text_field :discription
-                .drill-image-area
-                  .input-area
+                #image-box-1
+                  #image-box__container
                     = f.file_field :image_1, type: "file", value:"", id:"img-file1"
                     = f.file_field :image_2, type: "file", value:"", id:"img-file2"
-                    = f.file_field :image_3, type: "file", value:"", id:"img-file3"
                     %label{for:"img-file1"}
                     %label{for:"img-file2"}
-                    %label{for:"img-file3"}
                       %p ドラッグアンドドロップ またはクリックしてファイルをアップロード
       .swiper-pagination
     .swiper-button-prev

@@ -67,3 +67,4 @@ gem 'ancestry'
 gem 'cocoon'
 gem "nested_form"
 gem 'mini_magick'
+gem 'dropzonejs-rails'

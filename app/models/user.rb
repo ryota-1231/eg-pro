@@ -28,19 +28,19 @@ class User < ApplicationRecord
     })
   end
 
-  # def progresses_count
-  #   children = []
-  #   links = []
-  #   self.progresses.each do |progress|
-  #     links << progress.curriculum_id
-  #   end
+  def progresses_count
+    children = []
+    links = []
+    self.progresses.each do |progress|
+      links << progress.curriculum_id
+    end
 
-  #   num = links.uniq
-  #   num.each do |n|
-  #     children << Curriculum.find(n)
-  #   end
+    num = links.uniq
+    num.each do |n|
+      children << Curriculum.find(n)
+    end
 
-  #   return num
-  # end
+    return num
+  end
   
 end

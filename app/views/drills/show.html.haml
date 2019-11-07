@@ -66,9 +66,15 @@
                       %h3=drill_slide.title
                     .drill-discription
                       %p=drill_slide.discription
-                  .drill-image-area
-                    - if !drill_slide.image_1.nil?
-                      = image_tag "#{drill_slide.image_1}", size: "200x200", alt: "image"
+                  #image-box-1
+                    - if drill_slide.image_1.present? && drill_slide.image_2.present?
+                      = image_tag "#{drill_slide.image_1}", alt: "image", class: "image_1"
+                      = image_tag "#{drill_slide.image_2}", alt: "image", class: "image_2"
+                    - elsif drill_slide.image_1.present? && drill_slide.image_2.blank? 
+                      = image_tag "#{drill_slide.image_1}",  alt: "image", class: "image"
+                    - else
+                      .blank_area
+
             .swiper-slide
               .btn-area
                 .js-modal-close.close-btn
@@ -85,4 +91,3 @@
 = javascript_pack_tag 'swiper'
 = javascript_pack_tag 'curriculum'
 = javascript_pack_tag 'result'
--# = javascript_pack_tag 'success'

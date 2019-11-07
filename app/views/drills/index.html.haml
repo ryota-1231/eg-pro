@@ -11,17 +11,19 @@
                 .drill-title-area
                   .drill-title
                     %h3=drill.children.first.title
-                  .drill-discription
-                    %p=drill.children.first.discription
-                .drill-image-area
-                  .drill-image
-                    - if drill.children.first.image_1.present?
-                      =image_tag drill.children.first.image_1.to_s, size: "300x200", alt: "image"
-                  - if drill.user_id == current_user.id
-                    .drill-edit
-                      = link_to edit_curriculum_drill_path(id: drill.id) do
-                        .edit-button
-                          編集
+                #image-box-1
+                  - if drill.children.first.image_1.present? && drill.children.first.image_2.present?
+                    = image_tag "#{drill.children.first.image_1}", alt: "image", class: "image_1"
+                    = image_tag "#{drill.children.first.image_2}", alt: "image", class: "image_2"
+                  - elsif drill.children.first.image_1.present? && drill.image_2.blank? 
+                    = image_tag "#{drill.children.first.image_1}",  alt: "image", class: "image"
+                  - else
+                    .blank_area
+                - if drill.user_id == current_user.id
+                  .drill-edit
+                    = link_to edit_curriculum_drill_path(id: drill.id) do
+                      .edit-button
+                        編集
                 .drill-auther
                   - if drill.user.avatar.attached?
                     = image_tag drill.user.thumbnail_50,{class: 'user-avatar'}

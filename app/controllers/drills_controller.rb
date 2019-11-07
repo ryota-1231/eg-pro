@@ -4,7 +4,8 @@ class DrillsController < ApplicationController
 
   def index
     path = Rails.application.routes.recognize_path(request.referer)
-    if (path[:controller] == "curriculums" && path[:action] == "show")
+
+    if (path[:controller] == "curriculums" && path[:action] == "show") || (path[:controller] == "drills" && path[:action] == "edit")
       @drills = Drill.where(curriculum_id: params[:curriculum_id], ancestry: nil).limit(5)
       @new_drill = ""
     else
@@ -63,8 +64,7 @@ class DrillsController < ApplicationController
       drill = Drill.find(id)
       drill.update(drill_update_params[id])
     end
-
-    respond_with(@drills, location: edit_curriculum_drill_path)
+    respond_with(@drills, location: curriculum_drills_path)
   end
 
   def drill_delete(drill)
