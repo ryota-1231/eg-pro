@@ -1,4 +1,5 @@
 .curriculum-new--wrapper
+  = render '/users/header'
   .curriculum-contents
     .description
       %p 手順
@@ -7,10 +8,11 @@
       %ul
         %li.curriculum-list
           =@curriculum.curriculums
-          - @curriculum.children.each do |element|
+          - @curriculum.children.each do |child|
             %li.curriculum-list
-              =element.curriculums
-              - element.children.each do |ele|
-                %li.curriculum-list
-                  = link_to curriculum_drills_path(ele.id) do
-                    =ele.curriculums
+              - if child.children.present?
+                = link_to curriculum_path(child.id) do
+                  = child.curriculums
+              - else
+                = link_to curriculum_drills_path(child.id) do
+                  = child.curriculums

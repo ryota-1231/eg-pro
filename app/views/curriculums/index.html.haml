@@ -1,18 +1,15 @@
 .curriculum-wrapper
-  .curriculum-header
-    = link_to 'マイページ', user_path(current_user.id)
-    .log-out
-      .log-out__button
-        = link_to 'ログアウト', destroy_user_session_path, method: :delete
-  .curriculum-title
-    %p カリキュラム
-  .curriculum-contents
-    - @curriculums.each do |curriculum|
-      .curriculum-contents__box.box
-        = link_to curriculum_path(curriculum.id) do
-          %p=curriculum.curriculums
-
-    .curriculum-contents__box3.box
-      = link_to new_curriculum_path do
-        %p カリキュラムをつくる
+  = render '/users/header'
+  .curriculum_main
+    .curriculum-title
+      %p カリキュラムを選択する
+    .curriculum-contents
+      - @curriculums.each do |curriculum|
+        .curriculum-contents__box.box
+          = link_to curriculum_path(curriculum.id) do
+            %p=curriculum.curriculums
+            = image_tag "#{curriculum.image}", size: "200x150"
+      .curriculum-contents__box3.box
+        = link_to new_curriculum_path do
+          %p カリキュラムをつくる
         

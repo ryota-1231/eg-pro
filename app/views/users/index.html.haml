@@ -1,4 +1,5 @@
 .top-wapper
+  = render 'header'
   .top-contents.box.d1
     .top-title
       %h1 Eg-Pro
@@ -6,18 +7,14 @@
       %p これからエンジニアを目指そうとしている人が、一緒に楽しく学べるカリキュラム
   .top-contents.box.d2
     .d2__title
-      %p こんな悩みをお持ちな方いらっしゃいませんか？
+      %p 豊富なラインナップ
     .d2__contents
-      .d2__discription1
-        %p 今まだプログラミングやったことがないけど興味はある
-        %p Webって？ブラウザって？
-        %p 何からやっていいかわからない・・・
-      .d2__discription2
-        %p エンジニア初心者の僕がこれからプログラミングを始める人たちがまず知っておくべき知識をカリキュラム方式でお伝えします！
-      .d2__discription3
-        %p 手を動かしながら！　楽しく！　続けらる！
-        %p パソコンとインターネット環境があればすぐ始められます！
+      .d2__discription
+        %p 自分の興味のある言語から自由に学べます！
+      .d2__image
+        = image_tag "/assets/curriculum_sample.png", {class: "top_image"}
   .top-contents.box.d3
+    %p 今までのカリキュラムとは違い、そのカリキュラムを作るのも皆さんです！！教わり、教え合う学習プラットフォームです！
   .top-contents.box.d4
     .d4__title
       %p さっそく登録する

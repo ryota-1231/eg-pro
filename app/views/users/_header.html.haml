@@ -1,0 +1,18 @@
+#header
+  .left-content
+    .home-button
+      -if user_signed_in?
+        = link_to 'HOME', curriculums_path
+      - else
+        = link_to 'HOME', users_path
+  .right-content
+    - if user_signed_in?
+      .my-page__link
+        = link_to 'マイページ',  user_path(current_user.id)
+      .logout__link
+        = link_to 'ログアウト', destroy_user_session_path, method: :delete
+    - else
+      .login-page__link
+        = link_to 'ログイン',   new_user_session_path
+      .sign-up-page__link
+        = link_to '新規登録',  new_user_registration_path
