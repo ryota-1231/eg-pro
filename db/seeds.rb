@@ -12,8 +12,8 @@ require "csv"
 
 CSV.foreach('db/curriculum.csv', headers: true) do |row|
     Curriculum.create(
-    # id: row['id'],
-    curriculums: row['sizetype'],
+    id: row['id'],
+    curriculums: row['curriculums'],
     created_at: row['created_at'],
     updated_at: row['updated_at'],
     ancestry: row['ancestry'],
