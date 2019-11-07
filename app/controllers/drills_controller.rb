@@ -5,10 +5,10 @@ class DrillsController < ApplicationController
   def index
     path = Rails.application.routes.recognize_path(request.referer)
 
-    if (path[:controller] == "curriculums" && path[:action] == "show") || (path[:controller] == "drills" && path[:action] == "edit")
+    if (path[:controller] == "curriculums" && path[:action] == "show") || (path[:controller] == "drills" && path[:action] == "edit") || (path[:controller] == "drills" && path[:action] == "new")
       @drills = Drill.where(curriculum_id: params[:curriculum_id], ancestry: nil).limit(5)
       @new_drill = ""
-    else
+    elsif (path[:controller] == "curriculums" && path[:action] == "new")
       @drills = Drill.where(curriculum_id: params[:curriculum_id], ancestry: nil, user_id: current_user.id)
       @drill = Drill.new
       @new_drill = "new_drill"

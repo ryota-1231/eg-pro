@@ -1,11 +1,11 @@
 .drill-index-wrapper
-  .header
+  = render 'users/header'
   .main-contents
     .side-ber
     .drill-contents
-      - if @drills.first.present?
-        - if @drills.first.children.present?
-          - @drills.each do |drill|
+      - if @drills.present?
+        - @drills.each do |drill|
+          - if drill.children.present?
             = link_to curriculum_drill_path(id: drill.id) do
               .drill-content
                 .drill-title-area
@@ -38,4 +38,3 @@
               = form.hidden_field :title, value: "#{current_user.name}"+ params[:curriculum_id]
               = form.hidden_field :discription, value: "#{current_user.name}"+ params[:curriculum_id]
               = form.submit '新しくカリキュラムを作る'
-            

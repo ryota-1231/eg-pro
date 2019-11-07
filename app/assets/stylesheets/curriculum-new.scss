@@ -1,6 +1,5 @@
 .curriculum-new--wrapper{
   background-color: rgb(243, 243, 243);
-  height: 100vh;
   width: 100vw;
   .curriculum-contents{
     display: flex;
@@ -15,7 +14,6 @@
     .curriculum-index{
       background-color: #fff;
       width: 100%;
-      height: 90%;
       p{
         height: 40px;
         border-bottom: 1px solid #888;
@@ -28,6 +26,9 @@
           box-shadow: #888 1px 1px 10px;
           height: 60px;
           margin: 10px auto;
+          a{
+            display: block;
+          }
         }
       }
     }

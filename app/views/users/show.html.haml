@@ -1,5 +1,5 @@
 #my-page
-  .my-page__header
+  = render 'header'
   .my-page__wrapper
     .user-information
       .user-image-area
@@ -58,7 +58,7 @@
             - if !@user.progresses.present?
               まだ終了したカリキュラムはありません
             - else
-              =@user.progresses_count
+              -# =@user.progresses_count
           .user-learning-progress-rate__content.main
         .user-created-curriculum.box
           .user-created-curriculum__title.title
