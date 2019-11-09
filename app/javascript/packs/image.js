@@ -6,7 +6,11 @@ $(function(){
       var parent = $(this).parent('label');
       var image_id = $(parent).attr('id');
       var doc = document.getElementById(image_id);
-      $(doc).css('display', 'none')   
+      var image_container = $(this).parent().parent()
+      var image_container_id = $(image_container).attr('id')
+      $(parent).css('display', 'none')
+
+      console.log(image_container_id)
 
       $.each(this.files, function(i,input){
         var fr = new FileReader();
@@ -24,9 +28,9 @@ $(function(){
                       </div>
                     </div>`
           if (image_id == "image_1"){
-            $('#image-box__container').prepend(html);
+            $(image_container).prepend(html);
           } else {
-            $('#image-box__container').append(html);
+            $(image_container).append(html);
           }
         };
       })
@@ -34,16 +38,16 @@ $(function(){
 
     $(document).on('click', '.item-image__operetion--delete', function(e) {
       var target_image = $(this).parent().parent()
+      var label_doc_1 = $(target_image).siblings('#image_1')
+      var label_doc_2 = $(target_image).siblings('#image_2')
       var ttt = target_image.attr('id')
-      var target_label_1 = document.getElementById("image_1")
-      var target_label_2 = document.getElementById("image_2")
-        if (ttt == "image_1_target"){
-          $(target_label_1).css('display', 'block')
-          $(target_label_1).children('input[type=file]').val(null)
-        } else {
-          $(target_label_2).css('display', 'block')
-          $(target_label_2).children('input[type=file]').val(null)
-        }
+      if (ttt == "image_1_target"){
+        $(label_doc_1).css('display', 'block')
+        $(label_doc_1).children('input[type=file]').val(null)
+      } else {
+        $(label_doc_2).css('display', 'block')
+        $(label_doc_2).children('input[type=file]').val(null)
+      }
       target_image.remove()
     })
   }
