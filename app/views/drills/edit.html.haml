@@ -1,5 +1,5 @@
 #edit-form
-  = form_with(model: @drill_chidren, method: :patch, url: curriculum_drill_path, local: true) do |form|
+  = form_with(model: @drill_chidren, method: :patch, url: curriculum_drill_path, id: "new_form", local: true) do |form|
     .swiper-container
       .swiper-wrapper
         - @drill_children.each do |drill|
@@ -11,19 +11,68 @@
                 = f.hidden_field :ancestry, value: drill.ancestry
                 .drill-title-area
                   .drill-title
-                    = f.text_field :title, selected: drill.title
+                    = f.text_area :title
                   .drill-discription
-                    = f.text_field :discription
+                    = f.text_area :discription
                 #image-box-1
                   #image-box__container
-                    = f.file_field :image_1, type: "file", value:"", id:"img-file1"
-                    = f.file_field :image_2, type: "file", value:"", id:"img-file2"
-                    %label{for:"img-file1"}
-                    %label{for:"img-file2"}
-                      %p ドラッグアンドドロップ またはクリックしてファイルをアップロード
+                    - if drill.image_1.present? && drill.image_2.present?
+                      .item-image{"data-image" => "#{drill.image_1}", id: "image_1_target"}
+                        .item-image__content
+                          .item-image__content--icon
+                            = image_tag "#{drill.image_1}"
+                        .item-image__operetion
+                          .item-image__operetion--delete 削除
+                      = f.label :image_1, class: "image_1_label", id: "image_1", style: "display: none" do
+                        = f.file_field :image_1, value:"", class: "img_field"
+                        %p.image_1_p ドラッグアンドドロップ またはクリックしてファイルをアップロード
+                      .item-image{"data-image" => "#{drill.image_2}", id: "image_2_target"}
+                        .item-image__content
+                          .item-image__content--icon
+                            = image_tag "#{drill.image_2}"
+                        .item-image__operetion
+                          .item-image__operetion--delete 削除
+                      = f.label :image_2, class: "image_2_label", id: "image_2", style: "display: none" do
+                        = f.file_field :image_2, value:"", class: "img_field"
+                        %p.image_2_p ドラッグアンドドロップ またはクリックしてファイルをアップロード
+                    - elsif drill.image_1.present? && drill.image_2.blank?
+                      .item-image{"data-image" => "#{drill.image_1}", id: "image_1_target"}
+                        .item-image__content
+                          .item-image__content--icon
+                            = image_tag "#{drill.image_1}"
+                        .item-image__operetion
+                          .item-image__operetion--delete 削除
+                      = f.label :image_1, class: "image_1_label", id: "image_1", style: "display: none" do
+                        = f.file_field :image_1, value:"", class: "img_field"
+                        %p.image_1_p ドラッグアンドドロップ またはクリックしてファイルをアップロード
+                      = f.label :image_2, class: "image_2_label", id: "image_2" do
+                        = f.file_field :image_2, value:"", class: "img_field"
+                        %p.image_2_p ドラッグアンドドロップ またはクリックしてファイルをアップロード
+                    - elsif drill.image_1.blank? && drill.image_2.present?
+                      = f.label :image_1, class: "image_1_label", id: "image_1" do
+                        = f.file_field :image_1, value:"", class: "img_field"
+                        %p.image_1_p ドラッグアンドドロップ またはクリックしてファイルをアップロード
+                      .item-image{"data-image" => "#{drill.image_2}", id: "image_2_target"}
+                        .item-image__content
+                          .item-image__content--icon
+                            = image_tag "#{drill.image_2}"
+                        .item-image__operetion
+                          .item-image__operetion--delete 削除
+                      = f.label :image_2, class: "image_2_label", id: "image_2", style: "display: none" do
+                        = f.file_field :image_2, value:"", class: "img_field"
+                        %p.image_2_p ドラッグアンドドロップ またはクリックしてファイルをアップロード
+                    - else
+                      = f.label :image_1, class: "image_1_label", id: "image_1" do
+                        = f.file_field :image_1, value:"", class: "img_field"
+                        %p.image_1_p ドラッグアンドドロップ またはクリックしてファイルをアップロード
+                      = f.label :image_2, class: "image_2_label", id: "image_2" do
+                        = f.file_field :image_2, value:"", class: "img_field"
+                        %p.image_2_p ドラッグアンドドロップ またはクリックしてファイルをアップロード
       .swiper-pagination
     .swiper-button-prev
     .swiper-button-next
-    = form.submit
+    #submit
+      = form.submit
 %script{src:"https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"}
 = javascript_pack_tag 'swiper'
+= javascript_pack_tag 'image'
