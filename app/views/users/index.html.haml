@@ -2,39 +2,40 @@
   = render 'header'
   .top-contents.box.d1
     .top-title
-      %h1 Eg-Pro
+      %h1 EG-Pro
       .top-discription
-      %p これからエンジニアを目指そうとしている人が、一緒に楽しく学べるカリキュラム
+      %p Engineer Easy Fun
+      .top-button
+        .login-btn
+          = link_to 'ログイン', new_user_session_path
+        .sign-up-btn
+          = link_to '新規登録する', new_user_registration_path
   .top-contents.box.d2
-    .d2__title
-      %p 豊富なラインナップ
     .d2__contents
+      .d2__title
+        %p 豊富なラインナップ
       .d2__discription
         %p 自分の興味のある言語から自由に学べます！
-      .d2__image
-        = image_tag "/assets/curriculum_sample.png", {class: "top_image"}
+    .d2__image
+      = image_tag "/assets/curriculum_sample.png", {class: "top_image"}
   .top-contents.box.d3
-    %p 今までのカリキュラムとは違い、そのカリキュラムを作るのも皆さんです！！教わり、教え合う学習プラットフォームです！
+    %p 自分でカリキュラムの作成ができます！
+    .d3_image_area
+      .d3_image_1
+        = image_tag "/assets/sample_1.png"
+      .d3_image_2
+        = image_tag "/assets/sample_2.png"
+      .d3_image_3
+        = image_tag "/assets/sample_3.png"
+      .d3_description
+        %p 自分でカリキュラムを作成し、ユーザーの方に評価してもらえます！カリキュラムで学んだ内容をアウトプットしさらなる知識の共有と定着が可能です
   .top-contents.box.d4
-    .d4__title
-      %p さっそく登録する
-    .user-sign-up__box
-      .user-sign-up__box__title
-        %p 新規登録
-      .user-sign-up__box__contents
-        .user-sign-up__box__google
-          = link_to '' do
-            .google__button
-              Googleアカウントで登録する
-        .user-sign-up__box__twitter
-          = link_to '' do
-            .twitter__button
-              Twitterアカウントで登録する
-        .user-sign-up__box__mail
-          = link_to new_user_registration_path do
-            .mail__button
-              メールアドレスで登録する
-        .user-sign-up__box__sign-in
-          = link_to new_user_session_path do
-            .sign-in__button
-              ログイン
+    .top-title
+      %h1 EG-Pro
+      .top-discription
+      %p Engineer Easy Fun
+      .top-button
+        .login-btn
+          = link_to 'ログイン', new_user_session_path
+        .sign-up-btn
+          = link_to '新規登録する', new_user_registration_path

@@ -1,9 +1,7 @@
 .top-wapper{
   height: 100vh;
   width: 100vw;
-  background-image: image-url("pc-1776996_1280.png");
-  background-size: cover;
-  // opacity: 0.6;
+  background-image: image-url("learning-3245793_1920.jpg");
   position: fixed;
   overflow: auto;
   .top-contents{
@@ -12,94 +10,150 @@
   }
   .d1{
     .top-title{
+      font-family: 'Phosphate-Solid',sans-serif;
       text-align: center;
-      margin: 0 auto;
+      margin: 130px auto;
       padding: 40px;
+      color: #fff;
+      width: 450px;
+      border: 5px #fff double;
       h1{
-        font-size: 30px;
-        margin-bottom: 30px;
+        font-size: 100px;
+        margin: 0px;
+        height: 90px;
       }
       p{
-        font-size: 20px;
+        font-size: 30px;
       }
-    }
-  }
-  .d2{
-    background-color: #fff;
-    &__title {
-      color: #fff;
-      text-align: center;
-      padding:50px;
-    }
-    &__contents{
-      .d2__discription{
-
-      }
-      .d2__image{
-        .top_image{
-          width: 100%;
-          height: 80%;
+      .top-button{
+        width: 280px;
+        margin: 20px auto;
+        font-size: 15px;
+        display: flex;
+        justify-content: space-between;
+        .login-btn{
+          width: 120px;
+          height: 35px;
+          line-height: 25px;
+          background-color: rgb(236, 63, 20);
+          border-radius: 5px;
+          padding: 5px 10px;
+        }
+        .sign-up-btn{
+          width: 120px;
+          height: 35px;
+          line-height: 25px;
+          background-color: rgb(0, 183, 255);
+          border-radius: 5px;
+          padding: 5px 10px;
+        }
+        a{
+          color: #fff;
+          display: block;
         }
       }
     }
   }
+  .d2{
+    background-color: rgb(118, 212, 255);
+    &__contents{
+      height: 30%;
+      .d2__title {
+        color: #fff;
+        text-align: center;
+        padding:50px;
+      }
+      .d2__discription{
+      }
+    }
+    .d2__image{
+      height: 70%;
+      .top_image{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
   .d3{
-    background-color: blue;
-    opacity: 0.3;
+    background-color: rgb(38, 168, 103);
     p{
       padding-top: 100px;
       opacity: 1;
       color: #fff;
       text-align: center;
     }
+    .d3_image_area{
+      padding: 50px;
+      display: grid;
+      grid-template-rows: 4% 44% 4% 4% 44%;
+      grid-template-columns: 48% 4% 48%;
+      .d3_image_1{
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+      }
+      .d3_image_2{
+        grid-row: 2 / 3;
+        grid-column: 3 / 4;
+        margin-right: 30px;
+      }
+      .d3_image_3{
+        grid-row: 5 / 6;
+        grid-column: 1 / 2;
+      }
+      .d3_description{
+        grid-row: 5 / 6;
+        grid-column: 3 / 4;
+      }
+      img{
+        height: 100%;
+        width: 100%;
+      }
+    }
   }
   .d4{
-    background-color: green;
-    &__title{
-      color: #fff;
+    height: 100%;
+    padding-top: 180px;
+    .top-title{
+      font-family: 'Phosphate-Solid',sans-serif;
       text-align: center;
-    }
-    .user-sign-up__box{
-      background-color: #fff;
-      box-shadow: 0px 0px 10px 0.5px rgb(144, 228, 149);
-      width: 300px;
       margin: 0 auto;
-      text-align: center;
-      &__title{
-        padding: 20px;
+      padding: 40px;
+      color: #fff;
+      width: 450px;
+      border: 5px #fff double;
+      h1{
+        font-size: 100px;
+        margin: 0px;
+        height: 90px;
       }
-      &__contents{
-        color: #fff !important;
-        width: 250px;
-        margin: 0 auto;
-        padding-bottom: 40px;
-        .user-sign-up__box__google {
-          margin-top:20px;
-          .google__button{
-            background-color: rgb(16, 106, 223);
-            padding: 10px;
-          }
+      p{
+        font-size: 30px;
+      }
+      .top-button{
+        width: 280px;
+        margin: 20px auto;
+        font-size: 15px;
+        display: flex;
+        justify-content: space-between;
+        .login-btn{
+          width: 120px;
+          height: 35px;
+          line-height: 25px;
+          background-color: rgb(236, 63, 20);
+          border-radius: 5px;
+          padding: 5px 10px;
         }
-        .user-sign-up__box__twitter {
-          margin-top:20px;
-          .twitter__button{
-            background-color: rgb(16, 106, 223);
-            padding: 10px;
-          }
+        .sign-up-btn{
+          width: 120px;
+          height: 35px;
+          line-height: 25px;
+          background-color: rgb(0, 183, 255);
+          border-radius: 5px;
+          padding: 5px 10px;
         }
-        .user-sign-up__box__mail {
-          margin-top:20px;
-          .mail__button{
-            background-color: rgb(16, 106, 223);
-            padding: 10px;
-          }
-        }
-        .user-sign-up__box__sign-in {
-          margin-top:20px;
-          .sign-in__button{
-            background-color: rgb(223, 99, 16);
-            padding: 10px;
-          }
+        a{
+          color: #fff;
+          display: block;
         }
       }
     }
