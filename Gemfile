@@ -31,6 +31,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -56,7 +58,6 @@ gem 'haml-rails'
 gem "erb2haml"
 gem "font-awesome-rails"
 gem 'pry-rails'
-gem 'rspec-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rails_12factor', group: :production
@@ -64,7 +65,3 @@ gem 'fog-aws'
 gem "aws-sdk-s3"
 gem "devise"
 gem 'ancestry'
-gem 'cocoon'
-gem "nested_form"
-gem 'mini_magick'
-gem 'dropzonejs-rails'
