@@ -19,9 +19,9 @@ Eg Pro
 Herokuデプロイ済み
 https://eg-pro.herokuapp.com/
 
-- ユーザー名：　   　test_user
-- email:         test@example.com
-- password:      test_user
+- ユーザー名:   test_user
+- email:      test@example.com
+- password:   test_user
 
 
   
