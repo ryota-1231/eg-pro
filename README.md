@@ -13,6 +13,17 @@ Eg Pro
     
   エンジニアになるための知識を教え合う場所を提供します。
 
+
+# Access
+
+Herokuデプロイ済み
+https://eg-pro.herokuapp.com/
+
+ユーザー名：　   　test_user
+email:         test@example.com
+password:      test_user
+
+
   
 # Demo
 
